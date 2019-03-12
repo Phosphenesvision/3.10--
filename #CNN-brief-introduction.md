@@ -54,7 +54,7 @@ padding为p，卷积步幅为s
 
 二维的时候是灰度图像，三维时就变成了RGB彩色图像，除了高度和宽度还加了一个channel维度
 
-![cnn2](.\images\cnn2.png)
+![cnn2](./images/cnn2.png)
 
 
 
