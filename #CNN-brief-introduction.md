@@ -48,7 +48,7 @@ Same convolution：填充p=（f-1）/2，f一般都是奇数
 
 padding为p，卷积步幅为s
 
-则输出图像大小为($$1+\frac{nh+2p-f}{s}​$$)*($$1+\frac{nw+2p-f}{s}​$$)
+则输出图像大小为($$1+\frac{nh+2p-f}{s}$$)*($$1+\frac{nw+2p-f}{s}$$)
 
 **二维情况拓展成三维情况：**
 
@@ -80,7 +80,7 @@ padding为p，卷积步幅为s，过滤器的数量为ncc
 
 池化层可以减少高度和宽度上的维数
 
-![cnn3](.\images\cnn3.png)
+![cnn3](./images/cnn3.png)
 
 ### 1.3全连接层
 
@@ -92,15 +92,15 @@ padding为p，卷积步幅为s，过滤器的数量为ncc
 
 单层的卷积网络结构和参数数量的计算
 
-![cnn4](.\images\cnn4.png)
+![cnn4](./images/cnn4.png)
 
-![cnn5](.\images\cnn5.png)
+![cnn5](./images/cnn5.png)
 
 一个完整的卷积网络及其参数运算
 
-![cnn6](.\images\cnn6.png)
+![cnn6](./images/cnn6.png)
 
-![cnn7](.\images\cnn7.png)
+![cnn7](./images/cnn7.png)
 
 ## 2.典型网络展示
 
@@ -108,7 +108,7 @@ padding为p，卷积步幅为s，过滤器的数量为ncc
 
 [LeNet-5](https://cuijiahua.com/blog/tag/lenet-5/)出自论文Gradient-Based Learning Applied to Document Recognition，是一种用于手写体字符识别的非常高效的卷积神经网络
 
-![cnn8](.\images\cnn8.png)
+![cnn8](./images/cnn8.png)
 
 一共有7层，输入不算数，分析32*32的灰度图像
 
@@ -138,29 +138,29 @@ softmax    10
 
 输入图片尺寸227*227*3，处理的是RGB彩色图像
 
-![cnn9](.\images\cnn9.png)
+![cnn9](./images/cnn9.png)
 
-![cnn10](.\images\cnn10.png)
+![cnn10](./images/cnn10.png)
 
-![cnn11](.\images\cnn11.png)
+![cnn11](./images/cnn11.png)
 
 Alexnet有什么特点？
 
 （1）ReLU作为激活函数。
 
-​    ReLU为非饱和函数，论文中验证其效果在较深的网络超过了SIgmoid，成功解决了SIgmoid在网络较深时的梯度弥散问题。
+    ReLU为非饱和函数，论文中验证其效果在较深的网络超过了SIgmoid，成功解决了SIgmoid在网络较深时的梯度弥散问题。
 
 （2）Dropout避免模型过拟合
 
-​    在训练时使用Dropout随机忽略一部分神经元，以避免模型过拟合。在alexnet的最后几个全连接层中使用了Dropout。
+    在训练时使用Dropout随机忽略一部分神经元，以避免模型过拟合。在alexnet的最后几个全连接层中使用了Dropout。
 
 （3）重叠的最大池化
 
-​    之前的CNN中普遍使用平均池化，而Alexnet全部使用最大池化，避免平均池化的模糊化效果。并且，池化的步长小于核尺寸，这样使得池化层的输出之间会有重叠和覆盖，提升了特征的丰富性。
+    之前的CNN中普遍使用平均池化，而Alexnet全部使用最大池化，避免平均池化的模糊化效果。并且，池化的步长小于核尺寸，这样使得池化层的输出之间会有重叠和覆盖，提升了特征的丰富性。
 
 （4）提出LRN概念
 
-​    LRN层是什么？
+    LRN层是什么？
 
 local response normalizaiton，
 
@@ -180,9 +180,9 @@ k、alpha、beta、n/2 都是自定义系数，
 
 VGG16 是13个卷积层+3个全连接层叠加而成
 
-![cnn12](.\images\cnn12.png)
+![cnn12](./images/cnn12.png)
 
-![cnn13](.\images\cnn13.png)
+![cnn13](./images/cnn13.png)
 
 （1）VGG-16网络中的16代表的含义为：含有参数的有16个层，共包含参数约为1.38亿。
 
@@ -200,39 +200,39 @@ VGG16 是13个卷积层+3个全连接层叠加而成
 
 首先推导一下残差块是什么
 
-![cnn14](.\images\cnn14.png)
+![cnn14](./images/cnn14.png)
 
 残差块在网络中是什么样子的
 
-![cnn15](.\images\cnn15.png)
+![cnn15](./images/cnn15.png)
 
 残差网络为什么会有一个好的效果
 
-![cnn16](.\images\cnn16.png)
+![cnn16](./images/cnn16.png)
 
 ### 2.5 google inception network
 
 了解1*1convolution，可以用来压缩channel维度的数量
 
-![cnn17](.\images\cnn17.png)
+![cnn17](./images/cnn17.png)
 
 inception网络的基本结构，让电脑来帮助决定下一层用什么网络结构
 
-![cnn18](.\images\cnn18.png)
+![cnn18](./images/cnn18.png)
 
 引入新的问题，计算成本过高，拿一个32channel的网络来举例子给出解决办法
 
-![cnn19](.\images\cnn19.png)
+![cnn19](./images/cnn19.png)
 
-![cnn20](.\images\cnn20.png)
+![cnn20](./images/cnn20.png)
 
 优化后的inception网络基本结构
 
-![cnn21](.\images\cnn21.png)
+![cnn21](./images/cnn21.png)
 
 最终的成果展示图，可以插入softmax网络用来做分类
 
-![cnn22](.\images\cnn22.png)
+![cnn22](./images/cnn22.png)
 
 ## 3. Detection算法简介
 
@@ -242,15 +242,15 @@ inception网络的基本结构，让电脑来帮助决定下一层用什么网�
 
 第一类中的y八元组，损失函数L也变了
 
-![d1](.\images\d1.jpg)
+![d1](./images/d1.jpg)
 
-![d2](.\images\d2.jpg)
+![d2](./images/d2.jpg)
 
-![d3](.\images\d3.png)
+![d3](./images/d3.png)
 
 第二类中，64个特征点描绘出眼睛，129个数据
 
-![d4](.\images\d4.png)
+![d4](./images/d4.png)
 
 ### 3.2 sliding window detection
 
@@ -264,7 +264,7 @@ sliding window detection是针对于第一类问题讲优化
 
 所以无论目标在图像中的什么位置,总有一个窗口可以检测到它
 
-![s1](.\images\s1.png)
+![s1](./images/s1.png)
 
 但是这种情况会对于卷积计算，计算成本很大，为什么计算成本大？
 
@@ -274,11 +274,11 @@ sliding window detection是针对于第一类问题讲优化
 
 使用大小为14∗14∗3的图片作为图片数据,使用16个5∗5的卷积核做卷积操作,得到10∗10∗16的特征图,然后使用2∗2的max-pooling池化算法,得到5∗5∗16的特征图.将结果输入到两层具有400个神经元节点的全连接层中，然后使用softmax函数进行分类–表示softmax单元输出的4个分类出现的概率。
 
-![s2](.\images\s2.jpg)
+![s2](./images/s2.jpg)
 
 接下来要将最后连接的两个全连接层FC1和FC2转换为卷积层
 
-![s3](.\images\s3.jpg)
+![s3](./images/s3.jpg)
 
 具体的操作和原理
 
@@ -290,7 +290,7 @@ sliding window detection是针对于第一类问题讲优化
 
 所以正确的卷积操作的原理是我们不需要把输入图片分割成四个子集，分别传入卷积神经网络中进行前向传播，而是把它们作为一张图片输入给卷积网络进行计算，其中共有的区域可以共享很多计算
 
-![s4](.\images\s4.jpg)
+![s4](./images/s4.jpg)
 
 ### 3.3 YOLO algorithm
 
@@ -310,9 +310,9 @@ YOLO算法使用的是取目标对象边框中心点的算法，即考虑边框�
 
 由于有3*3个网格，所以输出的标签的大小为3∗3∗8,即8表示目标标签的深度，标签堆叠成为了一个长方体的形式而不是二维的堆叠方式
 
-![y1](.\images\y1.jpg)
+![y1](./images/y1.jpg)
 
-![y2](.\images\y2.png)
+![y2](./images/y2.png)
 
 那么如何去判断效果的好坏？？
 
@@ -324,7 +324,7 @@ IoU交并比算法
 
 以定义为0.5及以上的值
 
-![y3](.\images\y3.jpg)
+![y3](./images/y3.jpg)
 
 上面的算法遇到的问题？
 
@@ -332,7 +332,7 @@ IoU交并比算法
 
 对于如图的对象检测，使用19∗1919∗19的网格，在进行预测的同时，两辆车中心旁的其他网格也会认为目标对象的中心点在其中。如图绿色和黄色方框中显示。
 
-![y4](.\images\y4.jpg)
+![y4](./images/y4.jpg)
 
 为了清理多余或错误的检测结果，使用非极大值抑制算法Non-max suppression 
 
@@ -350,25 +350,25 @@ while 还有边界框剩下:
 
 如果要检测的对象不止汽车一个，还有行人和自行车的对象，正确的做法是:独立进行三次非最大值抑制，对每个输出类别都进行一次
 
-![y5](.\images\y5.png)
+![y5](./images/y5.png)
 
-![y6](.\images\y6.png)
+![y6](./images/y6.png)
 
 再考虑一种情况：先前介绍的方法只能使格子检测出一个对象，如果想要一个格子检测出多个对象– **anchor box**
 
 使用3∗3的网格检测图中的对象，注意行人的中点和汽车的中点几乎都在同一个地方，两者都落入同一个格子中。使用原先的目标标签，只能选择两个类别中的一个进行识别。
 
-![y7](.\images\y7.jpg)
+![y7](./images/y7.jpg)
 
 此时可以使用Anchor策略–即使用特定形状的Anchor box 作为边界框，则策略需要把预测结果与anchor boxes 关联起来。以处理两个识别对象的中心点落入同一个网格中的情况。
 
 则此时边界框的目标标签可以被编码为
 
-![y8](.\images\y8.png)
+![y8](./images/y8.png)
 
 具体的操作过程图
 
-![y9](.\images\y9.jpg)
+![y9](./images/y9.jpg)
 
 单目标图像检测算法–对于训练集图像中的每个对象，都根据对象的中点的位置，分配到对应的格子中。所以输出y是3∗3∗8, 使用anchor boxes 策略，每个对象不仅和之前一样被分配到同一个格子中，还被分配到对象形状交并比最高的anchor boxes中，假设只检测图片中的两个对象则输出y为3∗3∗16
 
