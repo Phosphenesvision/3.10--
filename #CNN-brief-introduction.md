@@ -22,7 +22,7 @@ https://blog.csdn.net/u014061630/article/details/80259359
 
 卷积操作涉及输入图像，过滤器和输出图像，过滤器分别与输入图像逐个相乘输出结果即为输出图像
 
-![cc](images\cc.jpg)
+![cc](images/cc.jpg)
 
 **padding概念：**
 
